@@ -37,50 +37,46 @@ farenheitCelsius(15);
 //Write a function that converts the Celsius temperature back to Fahrenheit. 
 
 function celsiusFarenheit(temp) {
-    temp = (temp * 9/5) + 32;
+    temp = (temp * 9 / 5) + 32;
     console.log("Farenheit = " + temp);
-    }
-    
-    celsiusFarenheit(15);
+}
+
+celsiusFarenheit(15);
 
 
 /************************************************************************************/
 // Write a function to determine if someone is old enough to vote.  The function should return a boolean of true or false.
 
-//your code...
 function canVote(age) {
-    return false;
+    if (age >= 18) {
+        return (true);
+    }
+    else {
+        return false;
+    }
 }
 
-
-
-
-
+console.log(canVote(19));
 
 
 /************************************************************************************/
 // Write a function that converts a string to an array. It should return an array.  
 
-//your code...
-function strToArr() {
-    return [];
+function strToArr(input) {
+    return input.split("");
 }
-
-
-
-
-
+console.log(strToArr("159104200"));
 
 
 /************************************************************************************/
 // Write a function that reverses your telephone number.  It should return the reversed telephone number.
 
-//your code...
 function reversePhone(number) {
-
+    number = number + "";
+    return number.split("").reverse().join("");
 }
 
-
+console.log(reversePhone(1234567890));
 
 
 
@@ -89,9 +85,13 @@ function reversePhone(number) {
 
 //your code...
 
+function car([vehicle]) {
 
+    return vehicle;
 
+}
 
+console.log(car(["Chevy, Sonic, 2012, White"]));
 
 
 /************************************************************************************/
@@ -99,19 +99,32 @@ function reversePhone(number) {
 
 //example : [10,23,3,4] => function() => {10 : 'even', 23 : 'odd', 3 : 'odd', 4 : 'even'}
 
-//your code...
+function list(array) {
+    let index = [0];
+    while (index < array.length) {
+        if (array[index] % 2 === 1) {
+            console.log(array[index] + " : odd");
+        }
+        else (console.log(array[index] + " : even"))
+        index++;
+    }
+}
 
-
-
-
-
+list([1, 2, 5, 8, 11, 100, 101]);
 
 
 /************************************************************************************/
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Write a "for" loop that console.log()'s the first value in the  array, and every 3rd number, i.e. 0, 3, 6, 9: the zeroth, third, sixth, and ninth values.
 
-//your code...
+function arrayList(numbers) {
+    const array = numbers.length;
+    for (i = 0; i <= array; i = i + 3) {
+        console.log(numbers[i]);
+    }
+}
+
+arrayList([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 
 
