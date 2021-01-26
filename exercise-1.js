@@ -100,17 +100,21 @@ console.log(car(["Chevy, Sonic, 2012, White"]));
 //example : [10,23,3,4] => function() => {10 : 'even', 23 : 'odd', 3 : 'odd', 4 : 'even'}
 
 function list(array) {
+    let evenOdd = {}
     let index = [0];
     while (index < array.length) {
         if (array[index] % 2 === 1) {
-            console.log(array[index] + " : odd");
+            evenOdd[array[index]] = "even";
         }
-        else (console.log(array[index] + " : even"))
+        else {
+            evenOdd[array[index]] = "odd";
+        }
         index++;
     }
+    return evenOdd;
 }
 
-list([1, 2, 5, 8, 11, 100, 101]);
+console.log(list([1, 2, 5, 8, 11, 100, 101]));
 
 
 /************************************************************************************/
@@ -169,7 +173,36 @@ while (i < 10) {
 //Multiply the sum of 30 added to two by 20.  Divide the product by 10 raised to the power of 2
 //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
-//your code...
+let sum = "";
+let times = "";
+let product = "";
+let power = "";
+
+function add() {
+    sum = 30 + 2;
+}
+
+function multiply() {
+    times = sum * 20;
+}
+
+function divide() {
+    product = times / 10;
+}
+
+function pow() {
+    power = Math.pow(product, 2);
+}
+
+add();
+multiply();
+divide();
+pow();
+
+console.log(sum);
+console.log(times);
+console.log(product);
+console.log(power);
 
 
 /************************************************************* */
@@ -189,6 +222,19 @@ while (i < 10) {
 // 125
 // undefined
 // ""
+
+console.log(`20 is truthy because it is a number, and numbers are type coerced as 'true' when performing boolean operations.`);
+console.log(`0 is a falsy because 0 is coerced as 'false' when performing boolean operations`);
+console.log(`"zero" is a truthy because filled strings are coerced as 'true' when performing boolean operations`);
+console.log(`const zero = 20 is a truthy because it does not meet any of the 6 conditions that type coerce into falsys when performing boolean operations`);
+console.log(`null is a falsy because it is type coerced as 'false' when performing boolean operations.`);
+console.log(`"0" is a truthy because it is a filled string, and not the value of 0 itself`);
+console.log(`!'' is a truthy becuase the operator is saying "not an empty string"`);
+console.log(`{} is a truthy because an empty object is type coerced as true when performing boolean operations.`);
+console.log(`() => {console.log("hello TEKcamp!")}; is a truthy because it contains a filled string.`);
+console.log(`125 is a truthy becuase it is a number that is not 0.`);
+console.log(`undefined is a falsy becuase undefined is coerced into false when performing boolean operations.`);
+console.log(`"" is an empty string and is therefore a falsy.`);
 
 
 
