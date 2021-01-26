@@ -242,20 +242,46 @@ console.log(`"" is an empty string and is therefore a falsy.`);
 /************************************************************* */
 // Refactor the following code using a switch statement:
 
-const day = "friday";
+// const day = "friday";
 
-if (day === "monday") {
-    console.log("we got a long week ahead of us...");
-} else if (day === "tuesday") {
-    console.log("tuesday's are still beterr than mondays, but LONG way to go still");
-} else if (day === "wednesday") {
-    console.log("We are smack dab in the middle of the week");
-} else if (day === "thursday") {
-    console.log("Thursday night... the mood is right");
-} else if (day === "friday") {
-    console.log("TGIF.  Friday truly is the best day of the week!")
-} else {
-    console.log("It's a weekend!")
+// if (day === "monday") {
+//     console.log("we got a long week ahead of us...");
+// } else if (day === "tuesday") {
+//     console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+// } else if (day === "wednesday") {
+//     console.log("We are smack dab in the middle of the week");
+// } else if (day === "thursday") {
+//     console.log("Thursday night... the mood is right");
+// } else if (day === "friday") {
+//     console.log("TGIF.  Friday truly is the best day of the week!")
+// } else {
+//     console.log("It's a weekend!")
+// }
+
+const day = 'monday';
+
+switch (day) {
+    case 'monday':
+        console.log("We have a long week ahead of us...");
+        break;
+    case 'tuesday':
+        console.log("Tuesday's are still better than Mondays, but a LONG way to go still");
+        break;
+    case 'wednesday':
+        console.log("We are smack dab in the middle of the week.");
+        break;
+    case 'thursday':
+        console.log("Thursday night... the mood is right...");
+        break;
+    case 'friday':
+        console.log("TGIF. Friday truly is the best day of the week!");
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log("It's a weekend!");
+        break;
+    default:
+        console.log('Not a valid day!');
 }
 
 
@@ -263,18 +289,24 @@ if (day === "monday") {
 /************************************************************* */
 // Refactor the following statements to use ternary expressions:
 
+// const age = 10;
+// if (age > 21) console.log("adult"); else {
+//     console.log("minor");
+// }
+
+// if (age > 13 && age < 19) console.log('teen'); else {
+//     console.log("not a teenager");
+// };
+
+// if (age > 65) console.log("retired"); else {
+//     console.log("still working...");
+// }
+
 const age = 10;
-if (age > 21) console.log("adult"); else {
-    console.log("minor");
-}
 
-if (age > 13 && age < 19) console.log('teen'); else {
-    console.log("not a teenager");
-};
-
-if (age > 65) console.log("retired"); else {
-    console.log("still working...");
-}
+age > 21 ? console.log("adult") : console.log("minor");
+age > 13 && age < 19 ? console.log("teen") : console.log("not a teenager");
+age > 65 ? console.log("retired") : console.log("still working...");
 
 
 /************************************************************* */
@@ -294,6 +326,26 @@ if (age > 65) console.log("retired"); else {
 */
 
 //your code...
+
+const me = {
+    name: "Philippe",
+    age: "30",
+    gender: "Male",
+    healthy: "yes",
+    hobbies: "playing music and video games",
+    profession: "Full-Stack Web Developer",
+    education: "Bachelor's Degree",
+
+    learn: function () {
+        return this.name + " is learning JavaScript.";
+    },
+    fun: function () {
+        return this.name + " enjoys " + this.hobbies;
+    }
+}
+
+console.log(me.learn());
+console.log(me.fun());
 
 
 
