@@ -1,3 +1,5 @@
+LINE 356 HAVE GROUP GO OVER it.
+
 // ***For all the exercises, be sure to log the output of the function to the console.***
 
 /************************************************************************************/
@@ -391,7 +393,19 @@ const nums = [1, 2, 3, 4, 5];
 
 //your code...
 
+function square(array) {
 
+    newArray = [];
+    len = array.length;
+
+    for (var index = 0; index < len; index++) {
+        newArray.push(array[index] * array[index]);
+    }
+
+    return newArray;
+}
+
+console.log(square(nums));
 
 
 
