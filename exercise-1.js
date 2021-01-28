@@ -1,4 +1,5 @@
 LINE 403 HAVE GROUP GO OVER it.
+LINE 643 STILL STUCK ON.
 
 // ***For all the exercises, be sure to log the output of the function to the console.***
 
@@ -390,14 +391,14 @@ console.log(me.fun());
 
 
 
-    //     // 3.
-    //     while (i < nums.length) {
-    //         doubled.push(nums[i] * 2);
-    //         i++;
-    //     }
+        // 3.
+        while (i < nums.length) {
+            doubled.push(nums[i] * 2);
+            i++;
+        }
 
-    //     console.log(doubled);
-    // }
+        console.log(doubled);
+    }
 
 
     let i = 0;
@@ -534,14 +535,22 @@ console.log(me.fun());
     ones.reverse();
 
     console.log(ones);
-    
+
 
     /************************************************************* */
     //create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
 
-    function performer(cb) {
-        //code goes here
+    function message(name, sport) {
+        alert('Hello ' + name + " have fun playing " + sport + " today!");
     }
+
+    function performer(cb) {
+        let name = prompt('Please enter your name.');
+        let sport = prompt('Please enter your sport');
+        cb(name, sport);
+    }
+
+    performer(message);
 
 
     /************************************************************* */
@@ -614,12 +623,16 @@ console.log(me.fun());
 
     //your code here...
 
-
+    const olderThan24 = devs.filter(older => older.age > 24);
+    console.log(olderThan24);
 
     /************************** */
     // Remove all people who are not developers (i.e. no tech stack)
 
     //your code here...
+
+    const removeNonDevs = devs.filter(techOnly => techOnly.tech_stack != null);
+    console.log(removeNonDevs);
 
 
 
@@ -628,13 +641,23 @@ console.log(me.fun());
 
     //your code here...
 
+    devs.reduce(function (a, b) {
+        for (i = 0; i < devs.length; i++) {
 
+        }
+        console.log(a);
+    })
 
     /************************** */
     // Find all female devs
 
     //your code here...
 
+    const findFemales = devs.filter(femalesOnly => (femalesOnly.gender === 'f'));
+    const findFemales2 = devs.filter(femalesOnly => (femalesOnly.gender === 'F'));
+
+    console.log(findFemales);
+    console.log(findFemales2);
 
     /************************** */
     // lowercase the genders of every dev
