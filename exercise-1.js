@@ -774,16 +774,51 @@ console.log(devInfo);
 // Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
 const numbersMixed = [2, 23, 1, 2, 1, 1, 1, 2, 2.5, 20, 200, 2000, , { k: "val" }, 20000, 19999, 1878, 140, 23, 4, "sk", true, true, "true-dat", "nice", "one", "two", "three", "3", "tea", []];
 
-function maxNumber(numbers) {
-    //your code...
-}
+const newArr = numbersMixed.map((num) => {
+    switch (num) {
+        case "one":
+            num = 1;
+            break;
+        case "two":
+            num = 2;
+            break;
+        case "three":
+        case "3":
+            num = 3;
+            break;
+    }
+    return num;
+});
+
+const removeArr = newArr.filter((x) => typeof x === "number");
+
+console.log(removeArr);
 
 //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
-function sortNums(numbers, desc = false) {
-    //your code...
-};
+function sortHighToLow(a, b) {
+    if (a > b) {
+        return -1;
+    }
+    if (a < b) {
+        return 1;
+    }
+    return 0;
+}
 
+function sortLowToHigh(a, b) {
+    if (a > b) {
+        return 1;
+    }
+    if (a < b) {
+        return -1;
+    }
+    return 0;
+}
+
+
+console.log(removeArr.sort(sortHighToLow));
+console.log(removeArr.sort(sortLowToHigh));
 
 
 /************************************************************* */
