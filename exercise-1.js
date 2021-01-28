@@ -676,6 +676,20 @@ for (i = 0; i < devs.length; i++) {
 
 //your code here
 
+const nameSort = devs.sort(function (a, b) {
+    let name1 = a.name;
+    let name2 = b.name;
+    if (name1 > name2) {
+        return 1;
+    }
+    if (name1 < name2) {
+        return -1;
+    }
+    return 0;
+});
+
+console.log(nameSort);
+
 
 /************************** */
 // Sort the devs by age in descending order
@@ -683,11 +697,52 @@ for (i = 0; i < devs.length; i++) {
 //your code here
 
 
+function ageSort(obj) {
+    const sort = obj.sort(function (a, b) {
+        const num1 = a.age;
+        const num2 = b.age;
+        if (num1 < num2) {
+            return 1;
+        }
+        if (num1 > num2) {
+            return -1;
+        }
+        return 0;
+    });
+    return sort;
+}
+
+console.log(ageSort(devs));
+
 
 /************************** */
 // Sort the male coders by age
 
 //your code here
+
+const male = [];
+for (i = 0; i < devs.length; i++) {
+    if (devs[i].gender === "m" || devs[i].gender === "M") {
+        male.push(devs[i]);
+    }
+}
+
+function ageSort(obj) {
+    const sort = obj.sort(function (a, b) {
+        const num1 = a.age;
+        const num2 = b.age;
+        if (num1 < num2) {
+            return -1;
+        }
+        if (num1 > num2) {
+            return 1;
+        }
+        return 0;
+    });
+    return sort;
+}
+
+console.log(ageSort(male));
 
 
 /************************** */
@@ -700,6 +755,19 @@ Dr. Patel is not a developer.
 */
 
 //your code here
+
+const devInfo = [];
+
+for (i = 0; i < devs.length; i++) {
+    if (devs[i].tech_stack != null) {
+        devInfo.push(devs[i].name + " specializes in " + devs[i].tech_stack + ". ");
+    }
+    if (devs[i].tech_stack === null) {
+        devInfo.push(devs[i].name + " is not a developer.");
+    }
+}
+
+console.log(devInfo);
 
 
 /************************************************************* */
