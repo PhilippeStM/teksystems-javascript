@@ -1,4 +1,4 @@
-LINE 356 HAVE GROUP GO OVER it.
+LINE 403 HAVE GROUP GO OVER it.
 
 // ***For all the exercises, be sure to log the output of the function to the console.***
 
@@ -400,6 +400,14 @@ console.log(me.fun());
     // }
 
 
+    let i = 0;
+    let doubled = [];
+    let nums = [1, 2, 3, 4, 5];
+
+    const expression = (i < nums.length) ? (i += 1) && (nums.forEach(() => doubled.push(nums[i] * 2))) : "";
+
+    console.log(doubled);
+
     /************************************************************* */
     // Use array methods to solve the following problems.
 
@@ -429,7 +437,13 @@ console.log(me.fun());
 
     //your code...
 
+    function remove(value) {
+        return value > 5;
+    }
 
+    const newArray = fivePlus.filter(remove);
+
+    console.log(newArray);
 
 
 
@@ -438,14 +452,31 @@ console.log(me.fun());
 
     //your code...
 
+    const arrayLength = 20
+    const newArray = []
 
+    for (let i = 0; i < arrayLength; i++) {
+        newArray.push(Math.random())
+    }
+
+    const sum = newArray.reduce(function (newArray, sum) {
+        return newArray + sum;
+    }, 0);
+
+    console.log(sum);
 
 
 
     const showNums = [12, 22, 33, 44, 55, 66, 77, 88, 99, 101];
     //Print out the value of each number divided by 2.  There is no need to store the output in an array.
 
+    let newArray = [];
 
+    for (i = 0; i < showNums.length; i++) {
+        newArray.push(showNums[i] / 2);
+    }
+
+    console.log(newArray);
 
     /************************************************************* */
     /* Chess pieces have point values associated with them.  
@@ -461,11 +492,38 @@ console.log(me.fun());
     
     */
 
+    let pieces = ["pawn", "knight", "queen", "king", "bishop", "rook"];
+    let points = 0;
+
     function chessCalc(pieces) {
-        //your code here
+        for (i = 0; i < pieces.length; i++) {
+            switch (pieces[i]) {
+                case "pawn":
+                    points += 1;
+                    break;
+                case "knight":
+                    points += 3;
+                    break;
+                case "bishop":
+                    points += 3;
+                    break;
+                case "rook":
+                    points += 5
+                    break;
+                case "queen":
+                    points += 9;
+                    break;
+                case "king":
+                    points += 0;
+                    break;
+                default:
+                    points = "Not a valid chess piece";
+                    break;
+            }
+        } return points;
     }
 
-
+    console.log(chessCalc(pieces));
 
 
     /************************************************************* */
@@ -473,7 +531,10 @@ console.log(me.fun());
     const ones = [1, 11, 111, 1111, 11111, 111111, 1111111, 11111111, 111111111, 1111111111];
     //reverse the array, without modifying / `mutating` the ones array.
 
+    ones.reverse();
 
+    console.log(ones);
+    
 
     /************************************************************* */
     //create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
