@@ -1,6 +1,3 @@
-LINE 403 HAVE GROUP GO OVER it.
-    LINE 643 STILL STUCK ON.
-
 // ***For all the exercises, be sure to log the output of the function to the console.***
 
 /************************************************************************************/
@@ -392,492 +389,529 @@ console.log(me.fun());
 
 
     // 3.
-    while (i < nums.length) {
-        doubled.push(nums[i] * 2);
-        i++;
-    }
+    //     while (i < nums.length) {
+    //         doubled.push(nums[i] * 2);
+    //         i++;
+    //     }
+
+    //     console.log(doubled);
+    // }
+
+
+    let i = 0;
+    let doubled = [];
+    let nums = [1, 2, 3, 4, 5];
+
+    const expression = (i < nums.length) ? (i += 1) && (nums.forEach(() => doubled.push(nums[i] * 2))) : "";
 
     console.log(doubled);
-}
 
+    /************************************************************* */
+    // Use array methods to solve the following problems.
 
-let i = 0;
-let doubled = [];
-let nums = [1, 2, 3, 4, 5];
+    const nums = [1, 2, 3, 4, 5];
+    // Square every number in the array.  Store the squares in a new array.
 
-const expression = (i < nums.length) ? (i += 1) && (nums.forEach(() => doubled.push(nums[i] * 2))) : "";
+    //your code...
 
-console.log(doubled);
+    function square(array) {
 
-/************************************************************* */
-// Use array methods to solve the following problems.
+        newArray = [];
+        len = array.length;
 
-const nums = [1, 2, 3, 4, 5];
-// Square every number in the array.  Store the squares in a new array.
-
-//your code...
-
-function square(array) {
-
-    newArray = [];
-    len = array.length;
-
-    for (var index = 0; index < len; index++) {
-        newArray.push(array[index] * array[index]);
-    }
-
-    return newArray;
-}
-
-console.log(square(nums));
-
-
-
-const fivePlus = [1, 3, 5, 7, 9, 1, 3, 5, 2, 3, 1, 23, 4, 232, 3, 4, 1, 2, 2, 2, 3, 4, 4, 1, 12, 11, 23, 3, 4, 5];
-//Remove all numbers that are less than 5.  Store the results in a new array.
-
-//your code...
-
-function remove(value) {
-    return value > 5;
-}
-
-const newArray = fivePlus.filter(remove);
-
-console.log(newArray);
-
-
-
-
-// Create an array of 20 randomly generated integers.  Calculate the sum of the elements in the array.
-
-//your code...
-
-const arrayLength = 20
-const newArray = []
-
-for (let i = 0; i < arrayLength; i++) {
-    newArray.push(Math.random())
-}
-
-const sum = newArray.reduce(function (newArray, sum) {
-    return newArray + sum;
-}, 0);
-
-console.log(sum);
-
-
-
-const showNums = [12, 22, 33, 44, 55, 66, 77, 88, 99, 101];
-//Print out the value of each number divided by 2.  There is no need to store the output in an array.
-
-let newArray = [];
-
-for (i = 0; i < showNums.length; i++) {
-    newArray.push(showNums[i] / 2);
-}
-
-console.log(newArray);
-
-/************************************************************* */
-/* Chess pieces have point values associated with them.  
- 
-Pawn = 1, Rook = 5, Bishop = 3, Knight = 3, Queen = 9, King = N/A 
- 
-Write a function that calculates the total point value of any given input list of Chess pieces.  
-ex : ['king','queen','pawn','pawn','pawn','bishop'] => chessCalc() => 15
- 
-If there are invalid chess pieces, discard those elements.
-ex : ['iPhone','queen','pawn'] => chessCalc() => 10
-['android'] => chessCalc() => null
- 
-*/
-
-let pieces = ["pawn", "knight", "queen", "king", "bishop", "rook"];
-let points = 0;
-
-function chessCalc(pieces) {
-    for (i = 0; i < pieces.length; i++) {
-        switch (pieces[i]) {
-            case "pawn":
-                points += 1;
-                break;
-            case "knight":
-                points += 3;
-                break;
-            case "bishop":
-                points += 3;
-                break;
-            case "rook":
-                points += 5
-                break;
-            case "queen":
-                points += 9;
-                break;
-            case "king":
-                points += 0;
-                break;
-            default:
-                points = "Not a valid chess piece";
-                break;
+        for (var index = 0; index < len; index++) {
+            newArray.push(array[index] * array[index]);
         }
-    } return points;
-}
 
-console.log(chessCalc(pieces));
-
-
-/************************************************************* */
-
-const ones = [1, 11, 111, 1111, 11111, 111111, 1111111, 11111111, 111111111, 1111111111];
-//reverse the array, without modifying / `mutating` the ones array.
-
-ones.reverse();
-
-console.log(ones);
-
-
-/************************************************************* */
-//create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
-
-function message(name, sport) {
-    alert('Hello ' + name + " have fun playing " + sport + " today!");
-}
-
-function performer(cb) {
-    let name = prompt('Please enter your name.');
-    let sport = prompt('Please enter your sport');
-    cb(name, sport);
-}
-
-performer(message);
-
-
-/************************************************************* */
-// For the given list of developers : 
-const devs = [
-    {
-        name: 'Cameron',
-        age: 23,
-        gender: 'm',
-        "tech_stack": ['html', 'css', 'js', 'React']
-    },
-    {
-        name: 'Liz',
-        age: 20,
-        gender: 'f',
-        "tech_stack": ['java', 'spring-boot', 'MySql']
-    },
-    {
-        name: 'Chris',
-        age: 102,
-        gender: 'm',
-        "tech_stack": ['react', 'express', 'python']
-    },
-    {
-        name: 'Rashid',
-        age: 27,
-        gender: 'm',
-        "tech_stack": ['thymeleaf', 'postgres', 'js', 'Angular']
-    },
-    {
-        name: 'Annie',
-        age: 30,
-        gender: 'F',
-        "tech_stack": ['html', 'scss', 'less', 'DynamoDB', 'GraphQL']
-    },
-    {
-        name: 'Dr. Patel',
-        age: 52,
-        gender: 'M',
-        "tech_stack": null
-    },
-    {
-        name: 'Isaiah',
-        age: 48,
-        gender: 'M',
-        "tech_stack": ['Java', '', 'less', 'DynamoDB', 'GraphQL']
-    },
-    {
-        name: 'Saima',
-        age: 33,
-        gender: 'F',
-        "tech_stack": ['MongoDB', 'Route53', 'Jenkins', 'Terraform', 'Kubernetes']
-    },
-    {
-        name: 'Omar',
-        age: 33,
-        gender: 'm',
-        "tech_stack": ['c++']
-    },
-    {
-        name: 'Mariam',
-        age: 32,
-        gender: 'f',
-        "tech_stack": null
-    },
-];
-
-/************************** */
-// Find all devs older than 24
-
-//your code here...
-
-const olderThan24 = devs.filter(older => older.age > 24);
-console.log(olderThan24);
-
-/************************** */
-// Remove all people who are not developers (i.e. no tech stack)
-
-//your code here...
-
-const removeNonDevs = devs.filter(techOnly => techOnly.tech_stack != null);
-console.log(removeNonDevs);
-
-
-
-/************************** */
-// Calculate the total age of all the devs
-
-//your code here...
-
-const reduceAge = devs.reduce((accumulator, currentValue) => accumulator + currentValue.age, 0);
-
-console.log(reduceAge);
-
-/************************** */
-// Find all female devs
-
-//your code here...
-
-const findFemales = devs.filter(femalesOnly => (femalesOnly.gender === 'f'));
-const findFemales2 = devs.filter(femalesOnly => (femalesOnly.gender === 'F'));
-
-console.log(findFemales);
-console.log(findFemales2);
-
-/************************** */
-// lowercase the genders of every dev
-
-//your code here...
-
-for (i = 0; i < devs.length; i++) {
-    if (devs[i].gender === "F") {
-        devs[i].gender = "f";
+        return newArray;
     }
-    else if (devs[i].gender === "M") {
-        devs[i].gender = "m";
+
+    console.log(square(nums));
+
+
+
+    const fivePlus = [1, 3, 5, 7, 9, 1, 3, 5, 2, 3, 1, 23, 4, 232, 3, 4, 1, 2, 2, 2, 3, 4, 4, 1, 12, 11, 23, 3, 4, 5];
+    //Remove all numbers that are less than 5.  Store the results in a new array.
+
+    //your code...
+
+    function remove(value) {
+        return value > 5;
     }
-    console.log(devs[i].gender);
-}
 
-/************************** */
-// Sort the developers by name
+    const newArray = fivePlus.filter(remove);
 
-//your code here
+    console.log(newArray);
 
-const nameSort = devs.sort(function (a, b) {
-    let name1 = a.name;
-    let name2 = b.name;
-    if (name1 > name2) {
-        return 1;
+
+
+
+    // Create an array of 20 randomly generated integers.  Calculate the sum of the elements in the array.
+
+    //your code...
+
+    const arrayLength = 20
+    const newArray = []
+
+    for (let i = 0; i < arrayLength; i++) {
+        newArray.push(Math.random())
     }
-    if (name1 < name2) {
-        return -1;
+
+    const sum = newArray.reduce(function (newArray, sum) {
+        return newArray + sum;
+    }, 0);
+
+    console.log(sum);
+
+
+
+    const showNums = [12, 22, 33, 44, 55, 66, 77, 88, 99, 101];
+    //Print out the value of each number divided by 2.  There is no need to store the output in an array.
+
+    let newArray = [];
+
+    for (i = 0; i < showNums.length; i++) {
+        newArray.push(showNums[i] / 2);
     }
-    return 0;
-});
 
-console.log(nameSort);
+    console.log(newArray);
+
+    /************************************************************* */
+    /* Chess pieces have point values associated with them.  
+     
+    Pawn = 1, Rook = 5, Bishop = 3, Knight = 3, Queen = 9, King = N/A 
+     
+    Write a function that calculates the total point value of any given input list of Chess pieces.  
+    ex : ['king','queen','pawn','pawn','pawn','bishop'] => chessCalc() => 15
+     
+    If there are invalid chess pieces, discard those elements.
+    ex : ['iPhone','queen','pawn'] => chessCalc() => 10
+    ['android'] => chessCalc() => null
+     
+    */
+
+    let pieces = ["pawn", "knight", "queen", "king", "bishop", "rook"];
+    let points = 0;
+
+    function chessCalc(pieces) {
+        for (i = 0; i < pieces.length; i++) {
+            switch (pieces[i]) {
+                case "pawn":
+                    points += 1;
+                    break;
+                case "knight":
+                    points += 3;
+                    break;
+                case "bishop":
+                    points += 3;
+                    break;
+                case "rook":
+                    points += 5
+                    break;
+                case "queen":
+                    points += 9;
+                    break;
+                case "king":
+                    points += 0;
+                    break;
+                default:
+                    points = "Not a valid chess piece";
+                    break;
+            }
+        } return points;
+    }
+
+    console.log(chessCalc(pieces));
 
 
-/************************** */
-// Sort the devs by age in descending order
+    /************************************************************* */
 
-//your code here
+    const ones = [1, 11, 111, 1111, 11111, 111111, 1111111, 11111111, 111111111, 1111111111];
+    //reverse the array, without modifying / `mutating` the ones array.
+
+    ones.reverse();
+
+    console.log(ones);
 
 
-function ageSort(obj) {
-    const sort = obj.sort(function (a, b) {
-        const num1 = a.age;
-        const num2 = b.age;
-        if (num1 < num2) {
+    /************************************************************* */
+    //create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
+
+    function message(name, sport) {
+        alert('Hello ' + name + " have fun playing " + sport + " today!");
+    }
+
+    function performer(cb) {
+        let name = prompt('Please enter your name.');
+        let sport = prompt('Please enter your sport');
+        cb(name, sport);
+    }
+
+    performer(message);
+
+
+    /************************************************************* */
+    // For the given list of developers : 
+    const devs = [
+        {
+            name: 'Cameron',
+            age: 23,
+            gender: 'm',
+            "tech_stack": ['html', 'css', 'js', 'React']
+        },
+        {
+            name: 'Liz',
+            age: 20,
+            gender: 'f',
+            "tech_stack": ['java', 'spring-boot', 'MySql']
+        },
+        {
+            name: 'Chris',
+            age: 102,
+            gender: 'm',
+            "tech_stack": ['react', 'express', 'python']
+        },
+        {
+            name: 'Rashid',
+            age: 27,
+            gender: 'm',
+            "tech_stack": ['thymeleaf', 'postgres', 'js', 'Angular']
+        },
+        {
+            name: 'Annie',
+            age: 30,
+            gender: 'F',
+            "tech_stack": ['html', 'scss', 'less', 'DynamoDB', 'GraphQL']
+        },
+        {
+            name: 'Dr. Patel',
+            age: 52,
+            gender: 'M',
+            "tech_stack": null
+        },
+        {
+            name: 'Isaiah',
+            age: 48,
+            gender: 'M',
+            "tech_stack": ['Java', '', 'less', 'DynamoDB', 'GraphQL']
+        },
+        {
+            name: 'Saima',
+            age: 33,
+            gender: 'F',
+            "tech_stack": ['MongoDB', 'Route53', 'Jenkins', 'Terraform', 'Kubernetes']
+        },
+        {
+            name: 'Omar',
+            age: 33,
+            gender: 'm',
+            "tech_stack": ['c++']
+        },
+        {
+            name: 'Mariam',
+            age: 32,
+            gender: 'f',
+            "tech_stack": null
+        },
+    ];
+
+    /************************** */
+    // Find all devs older than 24
+
+    //your code here...
+
+    const olderThan24 = devs.filter(older => older.age > 24);
+    console.log(olderThan24);
+
+    /************************** */
+    // Remove all people who are not developers (i.e. no tech stack)
+
+    //your code here...
+
+    const removeNonDevs = devs.filter(techOnly => techOnly.tech_stack != null);
+    console.log(removeNonDevs);
+
+
+
+    /************************** */
+    // Calculate the total age of all the devs
+
+    //your code here...
+
+    const reduceAge = devs.reduce((accumulator, currentValue) => accumulator + currentValue.age, 0);
+
+    console.log(reduceAge);
+
+    /************************** */
+    // Find all female devs
+
+    //your code here...
+
+    const findFemales = devs.filter(femalesOnly => (femalesOnly.gender === 'f'));
+    const findFemales2 = devs.filter(femalesOnly => (femalesOnly.gender === 'F'));
+
+    console.log(findFemales);
+    console.log(findFemales2);
+
+    /************************** */
+    // lowercase the genders of every dev
+
+    //your code here...
+
+    for (i = 0; i < devs.length; i++) {
+        if (devs[i].gender === "F") {
+            devs[i].gender = "f";
+        }
+        else if (devs[i].gender === "M") {
+            devs[i].gender = "m";
+        }
+        console.log(devs[i].gender);
+    }
+
+    /************************** */
+    // Sort the developers by name
+
+    //your code here
+
+    const nameSort = devs.sort(function (a, b) {
+        let name1 = a.name;
+        let name2 = b.name;
+        if (name1 > name2) {
             return 1;
         }
-        if (num1 > num2) {
+        if (name1 < name2) {
             return -1;
         }
         return 0;
     });
-    return sort;
-}
 
-console.log(ageSort(devs));
+    console.log(nameSort);
 
 
-/************************** */
-// Sort the male coders by age
+    /************************** */
+    // Sort the devs by age in descending order
 
-//your code here
+    //your code here
 
-const male = [];
-for (i = 0; i < devs.length; i++) {
-    if (devs[i].gender === "m" || devs[i].gender === "M") {
-        male.push(devs[i]);
+
+    function ageSort(obj) {
+        const sort = obj.sort(function (a, b) {
+            const num1 = a.age;
+            const num2 = b.age;
+            if (num1 < num2) {
+                return 1;
+            }
+            if (num1 > num2) {
+                return -1;
+            }
+            return 0;
+        });
+        return sort;
     }
-}
 
-function ageSort(obj) {
-    const sort = obj.sort(function (a, b) {
-        const num1 = a.age;
-        const num2 = b.age;
-        if (num1 < num2) {
+    console.log(ageSort(devs));
+
+
+    /************************** */
+    // Sort the male coders by age
+
+    //your code here
+
+    const male = [];
+    for (i = 0; i < devs.length; i++) {
+        if (devs[i].gender === "m" || devs[i].gender === "M") {
+            male.push(devs[i]);
+        }
+    }
+
+    function ageSort(obj) {
+        const sort = obj.sort(function (a, b) {
+            const num1 = a.age;
+            const num2 = b.age;
+            if (num1 < num2) {
+                return -1;
+            }
+            if (num1 > num2) {
+                return 1;
+            }
+            return 0;
+        });
+        return sort;
+    }
+
+    console.log(ageSort(male));
+
+
+    /************************** */
+    // For the list of devs, print out sentences including the name and tech stack of each dev, leaving out other information.  Example output is provided below : 
+
+    /*
+    Liz specializes in Java, Spring Boot, and MySql.
+    Chris specializes in React, Express, and Python.
+    Dr. Patel is not a developer.
+    */
+
+    //your code here
+
+    const devInfo = [];
+
+    for (i = 0; i < devs.length; i++) {
+        if (devs[i].tech_stack != null) {
+            devInfo.push(devs[i].name + " specializes in " + devs[i].tech_stack + ". ");
+        }
+        if (devs[i].tech_stack === null) {
+            devInfo.push(devs[i].name + " is not a developer.");
+        }
+    }
+
+    console.log(devInfo);
+
+
+    /************************************************************* */
+    // Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
+    const numbersMixed = [2, 23, 1, 2, 1, 1, 1, 2, 2.5, 20, 200, 2000, , { k: "val" }, 20000, 19999, 1878, 140, 23, 4, "sk", true, true, "true-dat", "nice", "one", "two", "three", "3", "tea", []];
+
+    const newArr = numbersMixed.map((num) => {
+        switch (num) {
+            case "one":
+                num = 1;
+                break;
+            case "two":
+                num = 2;
+                break;
+            case "three":
+            case "3":
+                num = 3;
+                break;
+        }
+        return num;
+    });
+
+    const removeArr = newArr.filter((n) => typeof n === "number");
+
+    console.log(removeArr);
+
+    //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
+
+    function sortHighToLow(a, b) {
+        if (a > b) {
             return -1;
         }
-        if (num1 > num2) {
+        if (a < b) {
             return 1;
         }
         return 0;
-    });
-    return sort;
-}
-
-console.log(ageSort(male));
-
-
-/************************** */
-// For the list of devs, print out sentences including the name and tech stack of each dev, leaving out other information.  Example output is provided below : 
-
-/*
-Liz specializes in Java, Spring Boot, and MySql.
-Chris specializes in React, Express, and Python.
-Dr. Patel is not a developer.
-*/
-
-//your code here
-
-const devInfo = [];
-
-for (i = 0; i < devs.length; i++) {
-    if (devs[i].tech_stack != null) {
-        devInfo.push(devs[i].name + " specializes in " + devs[i].tech_stack + ". ");
     }
-    if (devs[i].tech_stack === null) {
-        devInfo.push(devs[i].name + " is not a developer.");
+
+    function sortLowToHigh(a, b) {
+        if (a > b) {
+            return 1;
+        }
+        if (a < b) {
+            return -1;
+        }
+        return 0;
     }
-}
-
-console.log(devInfo);
 
 
-/************************************************************* */
-// Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
-const numbersMixed = [2, 23, 1, 2, 1, 1, 1, 2, 2.5, 20, 200, 2000, , { k: "val" }, 20000, 19999, 1878, 140, 23, 4, "sk", true, true, "true-dat", "nice", "one", "two", "three", "3", "tea", []];
+    console.log(removeArr.sort(sortHighToLow));
+    console.log(removeArr.sort(sortLowToHigh));
 
-const newArr = numbersMixed.map((num) => {
-    switch (num) {
-        case "one":
-            num = 1;
-            break;
-        case "two":
-            num = 2;
-            break;
-        case "three":
-        case "3":
-            num = 3;
-            break;
+
+    /************************************************************* */
+    //Research a new feature of ES6+ and create an example of it's use case here.  Be sure to write comments explaining what the feature is and why it is useful.
+
+
+    //your code...
+
+    `Arrow functions are an important update to ES6. They allow you to use a more compact version of functions, making it easier to place them within other variables or functions. It can also be named without using the function convention. They do, however, have some limitations, such as: 1) They should not be used as methods. 2) They cannot contain this or supers. 3) Cannot be used as constructors.Arrow
+
+Here is an example of a traditional function, and how a arrow function can be used instead...`
+
+    // The function below will add x and y together, and then produce a new sum value.
+    let x = 2;
+    let y = 5;
+    sum = 0;
+    sum2 = 0;
+
+    function add() {
+        sum = y + x;
+        return sum;
     }
-    return num;
-});
 
-const removeArr = newArr.filter((x) => typeof x === "number");
+    console.log(add());
 
-console.log(removeArr);
+    // The following is an arrow function version of the same function above.
 
-//After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
-
-function sortHighToLow(a, b) {
-    if (a > b) {
-        return -1;
+    addArrow = () => {
+        sum2 = y + x;
+        return sum2;
     }
-    if (a < b) {
-        return 1;
+
+    console.log(addArrow());
+
+    /************************************************************* */
+    //Add an example of the 5 primary JavaScript data types to the given mapObj.  The key is an example data type, and the value is the name of the data type.  An object data type has already been set as the 1st key / val pair.
+
+    const mapObj = new Map();
+    mapObj.set({ company: "TEKsystems" }, "object");
+    mapObj.set(false, "boolean");
+    mapObj.set(5, "number");
+    mapObj.set("words", "string");
+    mapObj.set([1, 2, 3, 4], "array");
+
+    console.log(mapObj.has({ company: "TEKsystems" }));
+    console.log("The previous console.log returns false because the objects are not set to the same value.")
+
+    //The above console.log() statement returns false.  Write another console.log() statement explaining why this line of code prints false.  Refactor the code `mapObj.set()`, so the code : `mapObj.has() returns true.  The goal is to successfully check and see if {company : "TEKsystems"} exists in the mapObj.
+
+    //your code...
+
+    const newArr = [];
+
+    for (i = 0; i < mapObj.length; i++) {
+        mapObj.push(newArr[i]);
     }
-    return 0;
-}
+    console.log(newArr);
 
-function sortLowToHigh(a, b) {
-    if (a > b) {
-        return 1;
+    //loop through the mapObj and create a new array of only the data types, leaving out the example keys of the mapObj.  Use array methods to do this.  Example output : ['string',number','boolean',array','object']
+
+    const removeArr = mapObj.filter((x) => typeof x === "number");
+
+
+    /************************************************************* */
+    //Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly selects one of the mathematical operations whenever it is invoked.  The doMath() function should print to the console the mathetmatical function that was carried out.  The doMath() function should return the computed value of any operation performed.
+
+    // ex : 2,3 => doMath(2,3) => adding : 5
+    const operations = [];
+    function doMath(x, y) { };
+
+    //your code...
+
+
+
+    /************************************************************* */
+    //- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
+
+    //your code...
+
+
+    //- Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
+
+    //your code
+
+
+    // Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
+
+    //your code...
+
+
+
+    // DO NOT DELETE THIS EXPORT
+    module.exports = {
+        tekCamp,
+        canVote
     }
-    if (a < b) {
-        return -1;
-    }
-    return 0;
-}
-
-
-console.log(removeArr.sort(sortHighToLow));
-console.log(removeArr.sort(sortLowToHigh));
-
-
-/************************************************************* */
-//Research a new feature of ES6+ and create an example of it's use case here.  Be sure to write comments explaining what the feature is and why it is useful.
-
-
-//your code...
-
-
-
-/************************************************************* */
-//Add an example of the 5 primary JavaScript data types to the given mapObj.  The key is an example data type, and the value is the name of the data type.  An object data type has already been set as the 1st key / val pair.
-
-const mapObj = new Map();
-mapObj.set({ company: "TEKsystems" }, "object");
-
-console.log(mapObj.has({ company: "TEKsystems" }));
-
-//The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false.  Refactor the code `mapObj.set()`, so the code : `mapObj.has() returns true.  The goal is to successfully check and see if {company : "TEKsystems"} exists in the mapObj.
-
-//your code...
-
-
-//loop through the mapObj and create a new array of only the data types, leaving out the example keys of the mapObj.  Use array methods to do this.  Example output : ['string',number','boolean',array','object']
-
-
-/************************************************************* */
-//Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly selects one of the mathematical operations whenever it is invoked.  The doMath() function should print to the console the mathetmatical function that was carried out.  The doMath() function should return the computed value of any operation performed.
-
-// ex : 2,3 => doMath(2,3) => adding : 5
-const operations = [];
-function doMath(x, y) { };
-
-//your code...
-
-
-
-/************************************************************* */
-//- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
-
-//your code...
-
-
-//- Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
-
-//your code
-
-
-// Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
-
-//your code...
-
-
-
-// DO NOT DELETE THIS EXPORT
-module.exports = {
-    tekCamp,
-    canVote
-}
 
 
 //*************************************** */
