@@ -883,28 +883,74 @@ Here is an example of a traditional function, and how a arrow function can be us
     //Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly selects one of the mathematical operations whenever it is invoked.  The doMath() function should print to the console the mathetmatical function that was carried out.  The doMath() function should return the computed value of any operation performed.
 
     // ex : 2,3 => doMath(2,3) => adding : 5
-    const operations = [];
-    function doMath(x, y) { };
+    // const operations = [];
+    // function doMath(x, y) { };
 
     //your code...
 
+    const add = function (num1, num2) {
+        return num1 + num2;
+    }
 
+    const subtract = function (num1, num2) {
+        return num1 - num2;
+    }
+
+    const multiply = function (num1, num2) {
+        return num1 * num2;
+    }
+
+    const divide = function (num1, num2) {
+        return num1 / num2;
+    }
+
+    const mathArray = [add, subtract, multiply, divide];
+
+    function mathEquations(num1, num2) {
+        const randomEquation = Math.floor(Math.random() * mathArray.length);
+        console.log(mathArray[randomEquation]);
+        return mathArray[randomEquation](num1, num2);
+    };
+
+
+    console.log(mathEquations(4, 7));
 
     /************************************************************* */
     //- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
 
     //your code...
 
+    function multiple(x) {
+        return function fn(y) {
+            return y * x;
+        }
+    }
+
+    const timesThree = multiple(3);
+
+    console.log(timesThree(4));
 
     //- Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
 
     //your code
 
+    const stockGain = basis => {
+        const message = " is how much the stock has increased."
+        return years = yrs => {
+            yrs = 5;
+            const growth = .05;
+            const total = growth * basis * yrs;
+            return total;
+        }
+    }
+
+    console.log(stockGain(3));
 
     // Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
 
     //your code...
 
+    const futureValue
 
 
     // DO NOT DELETE THIS EXPORT
