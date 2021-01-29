@@ -940,7 +940,7 @@ Here is an example of a traditional function, and how a arrow function can be us
             yrs = 5;
             const growth = .05;
             const total = growth * basis * yrs;
-            return total;
+            return message + total;
         }
     }
 
@@ -950,7 +950,8 @@ Here is an example of a traditional function, and how a arrow function can be us
 
     //your code...
 
-    const futureValue
+    const futureValue = stockGain(100);
+    console.log(futureValue);
 
 
     // DO NOT DELETE THIS EXPORT
