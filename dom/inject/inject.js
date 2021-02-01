@@ -6,7 +6,35 @@ const inject = document.getElementById("inject");
 const h1 = document.createElement("h1");
 const h2 = document.createElement("h2");
 const a = document.createElement("a");
+const p = document.createElement("p");
+const ol = document.createElement("ol");
+const li = document.createElement("li");
 
 h1.innerHTML = "HTML: Practice Exercise TEKcamp";
+h2.innerHTML = `TEKsystems "TEKcamp"`;
+p.innerHTML = "I love" + <i>HTML</i> + " for the following reasons:";
 
-inject.append(h1);
+inject.append(h1, h2, p);
+
+
+
+
+
+
+
+{/* <center>
+<h1><i>HTML Practice Exercise TEKcamp.</i></h1>
+<h2><a href="">TEKsystems "TEKcamp"</a></h2>
+</center>
+
+<hr />
+<p>I love <i>HTML</i> for the following reasons:</p>
+<ol>
+<li>I learned it quickly.</li>
+<li>I can make web pages using code
+<li> It’s fun.</li>
+</ol>
+<hr />
+<p>My instructor’s email address is: <a href="mailto:ayunas@teksystems.com">ayunas@teksystems.com</a>.</p>
+<h1>Have a great day!</h1>  I really look forward to learning how to code!  Have a great day.  
+-[Team "Git'er Done"] */}
