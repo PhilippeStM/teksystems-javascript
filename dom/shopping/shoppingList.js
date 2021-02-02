@@ -1,13 +1,10 @@
-const ul = document.getElementById("ul");
-const input = document.getElementById("input");
-const button = document.getElementById("button");
-
-// button.addEventListener("click", function () {
-//     const newInputValue = document.getElementById("item").value;
-//     newInputValue = input;
-//     console.log(newInputValue);
-// })
+const ul = document.querySelector("ul");
+const input = document.querySelector("input");
+const button = document.querySelector("button");
 
 button.addEventListener("click", function () {
-    console.log("test");
+    let newInputValue = document.getElementById("item").value;
+    newInputValue = input;
+    console.log(newInputValue);
 })
+
